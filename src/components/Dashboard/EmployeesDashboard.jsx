@@ -5,7 +5,7 @@ import Tasktodo from '../others/Tasktodo'
 
 function EmployeesDashboard({ onLogout, employeeData }) {
   return (
-    <div className='bg-[#1C1C1C] h-screen p-8 overflow-x-hidden '>
+    <div className='bg-[#1C1C1C] min-h-screen p-4 md:p-8 overflow-x-hidden '>
       <Headers name={employeeData?.firstName} onLogout={onLogout} />
       <Tasklist taskCounts={employeeData?.taskCounts} />
       <Tasktodo tasks={employeeData?.tasks} />

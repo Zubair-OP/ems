@@ -14,7 +14,7 @@ function Tasktodo({ tasks }) {
   const failedTasks = taskList.filter(task => task.failed);
 
   return (
-    <div id='todo' className='p-2 overflow-x-auto h-[52%] w-full flex gap-4 items-center mt-10 py-2'>
+    <div id='todo' className='p-2 overflow-x-auto h-[45vh] min-h-[300px] w-full flex gap-4 items-center mt-10 py-2'>
         {newTasks.map((task, index) => (
           <NewTask key={`new-${index}`} task={task} />
        ))}

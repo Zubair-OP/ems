@@ -10,8 +10,6 @@ function Taskboard() {
   const [Description, setDescription] = useState('');
   const [assign, setassign] = useState('');
 
-
-  
   const handleformsubmit = (e) => {
     e.preventDefault();
     const employeeIndex = employees?.findIndex(emp => emp.firstName.toLowerCase() === assign.toLowerCase());
@@ -58,33 +56,33 @@ function Taskboard() {
 
   return (
     <div>
-        <form onSubmit={handleformsubmit} className='w-full bg-[#333] mt-2 flex flex-start' >
-          <div className='left flex flex-col gap-4 w-1/2 p-4 rounded-md '>
+        <form onSubmit={handleformsubmit} className='w-full bg-[#333] mt-2 flex flex-col md:flex-row items-start justify-between p-4 md:p-0' >
+          <div className='left w-full md:w-1/2 p-4 rounded-md '>
             <div>
             <h3 className='text-sm mb-1 font-semibold'>Task Title</h3>
-            <input required value={tasktitle} onChange={(e) => settasktitle(e.target.value)} className='border-2 border-gray-400 w-[90%] outline-none rounded-sm p-2 text-sm' type="text" placeholder='Make a UI Design'/>
+            <input required value={tasktitle} onChange={(e) => settasktitle(e.target.value)} className='border-2 border-gray-400 w-full outline-none rounded-sm p-2 text-sm' type="text" placeholder='Make a UI Design'/>
           </div>
           <div>
             <h3 className='text-sm mb-1 font-semibold'>Date</h3>
-            <input required value={date} onChange={(e) => setdate(e.target.value)} className='border-2 border-gray-400 w-[90%] outline-none rounded-sm p-2 text-sm' type="date"/>
+            <input required value={date} onChange={(e) => setdate(e.target.value)} className='border-2 border-gray-400 w-full outline-none rounded-sm p-2 text-sm' type="date"/>
           </div>
           <div>
             <h3 className='text-sm mb-1 font-semibold'>Assign to</h3>
-            <input required value={assign} onChange={(e) => setassign(e.target.value)} className='border-2 border-gray-400 w-[90%] outline-none rounded-sm p-2 text-sm' type="text" placeholder='Employee Name'/>
+            <input required value={assign} onChange={(e) => setassign(e.target.value)} className='border-2 border-gray-400 w-full outline-none rounded-sm p-2 text-sm' type="text" placeholder='Employee Name'/>
           </div>
           <div>
             <h3 className='text-sm mb-1 font-semibold'>Category</h3>
-            <input required value={Category} onChange={(e) => setCategory(e.target.value)} className='border-2 border-gray-400 outline-none w-[90%] rounded-sm p-2 text-sm' type="text" placeholder='Design, dev , etc...'/>
+            <input required value={Category} onChange={(e) => setCategory(e.target.value)} className='border-2 border-gray-400 outline-none w-full rounded-sm p-2 text-sm' type="text" placeholder='Design, dev , etc...'/>
           </div>
           </div>
 
-          <div className='rite w-1/2 p-5 rounded-md flex flex-col '>
+          <div className='right w-full md:w-1/2 p-4 md:p-5 rounded-md flex flex-col '>
             <div className=''>
                <h3 className='text-sm mb-1.5 font-semibold'>Description</h3>
-               <textarea required value={Description} onChange={(e) => setDescription(e.target.value)} rows={9} className='w-full border-2 outline-none border-gray-400'></textarea>
+               <textarea required value={Description} onChange={(e) => setDescription(e.target.value)} rows={9} className='w-full border-2 outline-none border-gray-400 rounded-sm p-2 text-sm'></textarea>
             </div>
             <div>
-              <button className=' rounded-sm p-2 mt-3 outline-none bg-emerald-600 w-full font-semibold'>Create Task</button>
+              <button className='rounded-sm p-2 mt-3 outline-none bg-emerald-600 w-full font-semibold hover:bg-emerald-700 transition-colors'>Create Task</button>
             </div>
           </div>
         </form>
