@@ -2,7 +2,7 @@ import React from 'react'
 
 function FailedTask({ task }) {
   return (
-        <div className='w-[250px]  flex-shrink-0 h-full bg-red-400 rounded-xl p-4'>
+        <div className='w-62.5 shrink-0 h-full bg-red-400 rounded-xl p-4'>
             <div className='flex justify-between'>
                 <h2 className='bg-red-700 px-3 py-1 text-sm rounded-md'>{task?.category || 'Failed'}</h2>
                 <h3 className='text-sm'>{task?.taskDate || 'No date'}</h3>
