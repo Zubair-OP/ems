@@ -2,7 +2,7 @@ import React from 'react'
 
 function CompleteTask({ task }) {
   return (
-        <div className='w-[250px]  flex-shrink-0 h-full bg-yellow-400 rounded-xl p-4'>
+        <div className='w-[250px]  flex-shrink-0 h-full bg-green-400 rounded-xl p-4'>
             <div className='flex justify-between'>
                 <h2 className='bg-green-700 px-3 py-1 text-sm rounded-md'>{task?.category || 'Completed'}</h2>
                 <h3 className='text-sm'>{task?.taskDate || 'No date'}</h3>
@@ -12,7 +12,7 @@ function CompleteTask({ task }) {
                 {task?.taskDescription || 'No description available'}
             </p>
              <div className='mt-6'>
-                <button className='w-full bg-green-600 rounded font-medium py-1 px-2 text-xs'>Completed ✓</button>
+                <button className='cursor-pointer w-full bg-green-600 rounded font-medium py-1 px-2 text-xs'>Completed ✓</button>
             </div>
         </div>
   )

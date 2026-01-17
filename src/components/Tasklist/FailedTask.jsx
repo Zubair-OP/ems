@@ -12,7 +12,7 @@ function FailedTask({ task }) {
                 {task?.taskDescription || 'No description available'}
             </p>
             <div className='mt-6'>
-                <button className='w-full bg-red-600 rounded font-medium py-1 px-2 text-xs'>Failed ✗</button>
+                <button className='cursor-pointer w-full bg-red-600 rounded font-medium py-1 px-2 text-xs'>Failed ✗</button>
             </div>
         </div>
   )

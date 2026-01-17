@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -44,7 +44,6 @@ function Taskboard() {
     
     // Update state and localStorage
     updateEmployees(updatedEmployees);
-    console.log('Task added successfully!');
     
     settasktitle('');
     setdate('');

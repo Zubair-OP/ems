@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 
 function NewTask({ task }) {
+  const { acceptTask } = useContext(AuthContext);
+  
+  const handleAccept = () => {
+    // Get logged in user email
+    const loggedInUser = JSON.parse(localStorage.getItem('LoggedInUser'));
+    if (loggedInUser?.email) {
+      acceptTask(loggedInUser.email, task);
+    }
+  };
+
   return (
         <div className='w-[250px]  flex-shrink-0 h-full bg-blue-400 rounded-xl p-4'>
             <div className='flex justify-between'>
@@ -12,8 +23,8 @@ function NewTask({ task }) {
                 {task?.taskDescription || 'No description available'}
             </p>
             <div className='flex justify-between mt-6 '>
-                <button className='bg-green-500 rounded font-medium py-1 px-2 text-xs'>Accept Task</button>
-                <button className='bg-red-500 rounded font-medium py-1 px-2 text-xs'>Reject Task</button>
+                <button onClick={handleAccept} className='cursor-pointer bg-green-500 rounded font-medium py-1 px-2 text-xs'>Accept Task</button>
+                <button className='cursor-pointer bg-red-500 rounded font-medium py-1 px-2 text-xs'>Reject Task</button>
             </div>
         </div>
   )
